@@ -20,11 +20,15 @@ formatResult <- function(text, themestring, labelstring, oneline, formatR = TRUE
 
   if (oneline) {
     if (formatR) {
-      result <- formatR::tidy_source(text = result, output = FALSE, width.cutoff = 40)$text.tidy
+      if (requireNamespace("styler", quietly = TRUE)) {
+        result <- styler::style_text(result)
+      } else {
+        warning("styler package not available. Install it for better code formatting.")
+        result <- paste(result, collapse = " ")
+      }
       result <- gsub('^\\+theme', ' + theme', result)
     }
-    result <- paste0(text, paste(result, collapse = ' '))
-
+    result <- paste0(text, paste(result, collapse = " "))
   }
 
   result <- paste(result, collapse = "\n")

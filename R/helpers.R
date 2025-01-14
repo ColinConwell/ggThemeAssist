@@ -1,7 +1,5 @@
 headingOutput <- function(heading, height = '20px', css = 'color: #ad1d28; text-decoration: underline;') {
-
-  fillCol(tags$div(style = css, strong(heading)), height = height)
-
+  tags$div(style = paste(css, "height:", height), tags$strong(heading))
 }
 
 addQuotes <- function(x){
@@ -85,11 +83,9 @@ getRGBHexColours <- function(gg) {
 }
 
 colours2RGB <- function(colours, Inherit = FALSE) {
-  #return a df of rgb colours
   colours[is.na(colours)] <- 'NA'
-  rgbcolours <- matrix(as.character(as.character.hexmode(col2rgb(colours), width = 2)), nrow = 3)
-  rgbcolours <- apply(rgbcolours, 2, paste, collapse = '')
-  rgbcolours <- paste('#', rgbcolours, sep = '')
+  rgbcolours <- grDevices::col2rgb(colours, alpha = TRUE)
+  rgbcolours <- apply(rgbcolours, 2, function(x) sprintf("#%02X%02X%02X%02X", x[1], x[2], x[3], x[4]))
   rgbcolours <- data.frame(name = colours, colour = colours, rgb = rgbcolours, stringsAsFactors = FALSE)
   rgbcolours[1, 1] <- 'None'
   if (Inherit) {

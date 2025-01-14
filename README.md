@@ -1,39 +1,23 @@
 ggThemeAssist
 ==============
 [![Build Status](https://travis-ci.org/calligross/ggthemeassist.svg?branch=master)](https://travis-ci.org/calligross/ggthemeassist)
-[![CRAN](http://www.r-pkg.org/badges/version/ggThemeAssist)](http://cran.rstudio.com/package=ggThemeAssist) [![Downloads](http://cranlogs.r-pkg.org/badges/ggThemeAssist?color=brightgreen)](http://www.r-pkg.org/pkg/ggThemeAssist)
 [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/calligross)
 
-
-**ggThemeAssist** is a RStudio-Addin that uses the [`rstudioapi`](https://github.com/rstudio/rstudioapi) package and provides a GUI for editing [`ggplot2`](https://github.com/hadley/ggplot2) themes. 
-
-For a full list of features see [`NEWS`](./NEWS.md).
-
+**ggThemeAssist** is a RStudio-Addin that provides a GUI for editing [`ggplot2`](https://github.com/hadley/ggplot2) themes. 
 
 Installation
 ------------
 
-Please be aware that you need the **most recent (stable) release of RStudio** (v0.99.878 or later). Additionally, **ggThemeAssist** depends on [`shiny`](https://github.com/rstudio/shiny) and [`miniUI`](https://github.com/rstudio/miniUI).
+Please be aware that you need the **most recent (stable) release of RStudio** (v1.2 or later). Additionally, **ggThemeAssist** depends on [`shiny`](https://github.com/rstudio/shiny) and [`ggplot2`](https://github.com/tidyverse/ggplot2).
 
 #### Install from Github
-You can install the latest version of **ggThemeAssist** from Github using the [`devtools`](https://github.com/hadley/devtools) package:
+You can install the latest version of **ggThemeAssist** from Github using the [`remotes`](https://github.com/r-lib/remotes) package:
 ```r
-if (!requireNamespace("devtools", quietly = TRUE))
-  install.packages("devtools")
+if (!requireNamespace("remotes", quietly = TRUE))
+  install.packages("remotes")
 
-devtools::install_github("calligross/ggthemeassist")
+remotes::install_github("calligross/ggthemeassist")
 ```
-
-#### Install from CRAN
-
-The stable version of **ggThemeAssist**, v0.1.4, is available on CRAN:
-```r
-install.packages("ggThemeAssist")
-```
-<!---
-
-We advise users to install from github. Due to CRAN policies and the rapid development of ggThemeAssist, many new features and bugfixes may be available on CRAN several weeks later.
--->
 
 Usage
 ------------

@@ -10,12 +10,14 @@ License: GPL-3
 URL: https://github.com/calligross/ggthemeassist
 LazyData: TRUE
 Imports:
-    shiny (>= 0.13),
-    miniUI (>= 0.1.1),
-    rstudioapi (>= 0.5),
-    ggplot2,
-    formatR
-Suggests: extrafont
+    shiny,
+    rstudioapi,
+    ggplot2 (>= 3.3.0),
+    styler
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
 RoxygenNote: 6.0.1
 Depends:
     R (>= 3.0.0)
